@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-research-engine"
+version = "0.1.0"
+description = "Local-first research assistant and retrieval evaluation toolkit"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {text = "MIT"}
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "uvicorn[standard]>=0.30,<1.0",
+  "pydantic-settings>=2.4,<3.0",
+  "rank-bm25>=0.2.2,<1.0",
+  "pypdf>=5.0,<7.0",
+  "streamlit>=1.39,<2.0",
+  "requests>=2.32,<3.0",
+  "python-multipart>=0.0.9,<1.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<9.0", "httpx>=0.27,<1.0", "ruff>=0.6,<1.0"]
+
+[tool.setuptools.packages.find]
+include = ["aura*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

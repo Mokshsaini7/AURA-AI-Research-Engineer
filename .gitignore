@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+*.log
+.DS_Store
+data/index/
+data/uploads/
+.coverage
+htmlcov/
+.idea/
+.vscode/
